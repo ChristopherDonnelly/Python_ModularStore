@@ -30,8 +30,9 @@ class Manage(object):
         self.products = []
 
     def add_store(self, storeName, storeLoc, storeOwner):
-        print '~~~ Add Store {} to Manager ~~~'.format(prodName)
         self.stores.append(Store(getStoreId(), storeName, storeLoc, storeOwner))
+        print '~~~ Added Store {} to Manager ~~~\n'.format(storeName)
+
         return self
 
     def remove_store(self):
@@ -39,8 +40,9 @@ class Manage(object):
         return self
 
     def add_product(self, prodPrice, prodName, prodWeight, prodBrand, prodStatus="Warehouse"):
-        print '~~~ Add Product {} to Manager ~~~'.format(prodName)
         self.products.append(Product(getProdId(), prodPrice, prodName, prodWeight, prodBrand, prodStatus))
+        print '~~~ Added Product {} to Manager Warehouse ~~~\n'.format(prodName)
+
         return self
 
     def remove_product(self, prodName):

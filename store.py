@@ -7,11 +7,14 @@ class Store(object):
         self.name = name
         self.location = location
         self.owner = owner
-        print '~~~ Added new store {} ~~~\n'.format(name)
+        print '~~~ Created new store {} ~~~'.format(name)
+        self.info()
+
     def add_product(self, prodId, prodPrice, prodName, prodWeight, prodBrand, prodStatus="for sale"):
         print '~~~ Add Product to {} Store ~~~'.format(self.name)
         self.products.append(Product(prodId, prodPrice, prodName, prodWeight, prodBrand, prodStatus))
         return self
+
     def remove_product(self, prodName):
         removed = False
         for idx, product in enumerate(self.products):
@@ -26,7 +29,11 @@ class Store(object):
             print "~~~ Could not find Product {} in {}'s Inventory ~~~\n".format(prodName, self.name)
 
         return self
-    def 
+    
+    def info(self):
+        print "Store ID: {}\nStore Name: {}\nStore Location: {}\nStore Owner: {}".format(self.id, self.name, self.location, self.owner)
+        return self
+
     def inventory(self):
         print "~~~ Display all Inventory for the {} Store ~~~\n".format(self.name)
         for product in self.products:

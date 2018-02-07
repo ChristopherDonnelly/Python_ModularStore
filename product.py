@@ -7,6 +7,7 @@ class Product(object):
         self.brand = brand
         self.status = status
 
+        print '~~~ Created new product {} ~~~'.format(name)
         self.display_info()
     def sell(self):
         self.status = 'sold'
@@ -39,7 +40,7 @@ class Product(object):
         self.display_info()
         return self
     def display_info(self):
-        print 'Prod ID:', self.id, '\nName:', self.name, '\nBrand:', self.brand, '\nPrice: ${0:.2f}'.format(self.price, 2), '\nStatus:', self.status, '\nWeight:', self.weight, '\n'
+        print 'Prod ID:', self.id, '\nName:', self.name, '\nBrand:', self.brand, '\nPrice: ${0:.2f}'.format(self.price, 2), '\nStatus:', self.status, '\nWeight:', self.weight
         return self
 
 if(__name__ == "__main__"):
